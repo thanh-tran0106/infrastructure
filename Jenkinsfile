@@ -17,7 +17,6 @@ pipeline {
       script {
         dir('infrastructure') {
           sh 'ls -la'
-          sh 'docker volume create artifactory-data'
           sh 'docker pull releases-docker.jfrog.io/jfrog/artifactory-oss:latest'
           sh 'docker run -d --name artifactory -p 8082:8082 -p 8081:8081 -v releases-docker.jfrog.io/jfrog/artifactory-oss:latest'
           sh 'docker ps -a'
