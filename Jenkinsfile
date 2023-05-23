@@ -17,9 +17,9 @@ pipeline {
       script {
         dir('infrastructure') {
           sh 'ls -la'
-          sh 'docker pull releases-docker.jfrog.io/jfrog/artifactory-oss:latest'
-          sh 'docker run --name artifactory -v artifactory-data:/var/opt/jfrog/artifactory -d -p 8081:8081 -p 8082:8082 releases-docker.jfrog.io/jfrog/artifactory-oss:latest'
-          sh 'docker ps -a'
+          sh 'sudo docker pull releases-docker.jfrog.io/jfrog/artifactory-oss:latest'
+          sh 'sudo docker run --name artifactory -v artifactory-data:/var/opt/jfrog/artifactory -d -p 8081:8081 -p 8082:8082 releases-docker.jfrog.io/jfrog/artifactory-oss:latest'
+          sh 'sudo docker ps -a'
         }
       }
     }
